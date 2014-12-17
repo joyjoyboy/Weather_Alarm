@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/currWeather"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Current Weather"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/currTemperature"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Temperature: -"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp" />
+
+    <Space
+        android:layout_height="30dp"
+        android:layout_width="fill_parent"
+        android:id="@+id/paddingSpace_1" />
+
+    <TextView
+        android:id="@+id/prov"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Current GPS coordinates"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/lat"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Latitude: -"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/lon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Longitude: -"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/addr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Address: -"
+        android:textSize="20dp" />
+
+    <Space
+        android:layout_height="30dp"
+        android:layout_width="fill_parent"
+        android:id="@+id/paddingSpace_2" />
+
+    <Button
+        android:id="@+id/addCalendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Calendar Event"
+        android:textSize="20dp"
+        android:paddingTop="10dp" />
+
+</LinearLayout> 

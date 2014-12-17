@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="wenxiao.com.weatherapp.calendarhandler">
+
+    <TextView
+        android:text="Travel plan:"
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:paddingBottom="10dp" />
+
+    <EditText
+        android:id="@+id/city"
+        android:hint="Enter city"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_below="@id/header"
+        android:paddingBottom="10dp" />
+
+    <EditText
+        android:id="@+id/state"
+        android:hint="Enter state"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_below="@id/city" />
+
+    <EditText
+        android:id="@+id/date"
+        android:hint="Enter date in YYYY/MM/DD format"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_below="@id/state" />
+
+    <Space
+        android:layout_height="30dp"
+        android:layout_width="fill_parent"
+        android:id="@+id/paddingSpace"
+        android:layout_below="@id/date"/>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:textSize="20dp"
+        android:layout_below="@id/paddingSpace"
+        android:paddingTop="10dp" />
+
+    <Space
+        android:layout_height="30dp"
+        android:layout_width="fill_parent"
+        android:id="@+id/paddingSpace2"
+        android:layout_below="@id/submit"/>
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:textSize="20dp"
+        android:layout_below="@id/paddingSpace2"
+        android:paddingTop="10dp" />
+
+</RelativeLayout>
