@@ -1,4 +1,4 @@
-<h2>Advanced Programming Tools @ University of Texas at Austin, 2014 fall</h2>
+<h2>2014 Fall Advanced Programming Tools</h2>
 <h3>Final Project: Weather Alarm</h3>
 <h4>© Wenxiao Yu<h4>
 
