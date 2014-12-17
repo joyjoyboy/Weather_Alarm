@@ -1,0 +1,4 @@
+cron:
+- description: Every Day
+  url: /webScraper
+  schedule: every day 14:00

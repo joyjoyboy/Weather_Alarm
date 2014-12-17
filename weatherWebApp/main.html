@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+<head>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+
+</head>	
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+			<a class="navbar-brand" href="#">Console</a>
+			<ul class="nav navbar-nav">
+				<li class="active">
+					<a href="/">Manage</a>
+				</li>
+				<li>
+					<a href="/createUser">Create User</a>
+				</li>
+				<li>
+					<a href="/createCalendar">Create Calendar Event</a>
+				</li>
+				<li>
+					<a href="/setThreshold">Set Threshold</a>
+				</li>
+			</ul>
+		</nav>
+		<br><br>
+		<div class="panel panel-default">
+			<div class="panel-heading"><h2 style="text-align: center">Current Threshold: {{threshold}}</h2></div>
+			<div class="panel-heading"><h2>User List:</h2></div>
+			<div class="panel-body">
+				<form action="/deleteUserListHandler" method="post">
+					<table class="table table-bordered table-hover">
+						<thead>
+							<tr>
+								<th>User name</th>
+								<th>User password</th>
+								<th>Last modified date</th>
+								<th>Rainy</th>
+								<th>Temperature</th>
+								<th>Address</th>
+								<th>Delete User</th>
+							</tr>
+						</thead>
+						<tbody>
+						{% for usrEntry in usrList %}
+							<tr>
+								<td>{{usrEntry.usrName}}</td>
+								<td>{{usrEntry.pwd}}</td>
+								<td>{{usrEntry.date}}</td>
+								<td>{{usrEntry.rainy}}</td>
+								<td>{{usrEntry.temperature}}</td>
+								<td>{{usrEntry.address}}</td>
+								<td><input type="checkbox" name="deleteCheckbox" value="{{usrEntry.usrName}}"></td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+					<div>
+						<button type="submit" class="btn btn-default pull-right">Delete User</button>
+					</div>
+				</form>
+			</div>
+			<div class="panel-heading"><h2>Calendar Events:</h2></div>
+			<div class="panel-body">
+				<form action="/deleteCalendarHandler" method="post">
+					<table class="table table-bordered table-hover">
+						<thead>
+							<tr>
+								<th>UserName</th>
+								<th>Date</th>
+								<th>Destination address</th>
+								<th>Delete User</th>
+							</tr>
+						</thead>
+						<tbody>
+						{% for usrEntry in calendarList %}
+							<tr>
+								<td>{{usrEntry.usrName}}</td>
+								<td>{{usrEntry.currDate}}</td>
+								<td>{{usrEntry.currAddr}}</td>
+								<td><input type="checkbox" name="deleteCheckbox" value="{{usrEntry.usrName}}"></td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+					<div>
+						<button type="submit" class="btn btn-default pull-right">Delete User</button>
+					</div>
+				</form>
+			</div>
+			<div class="panel-heading"><h2>Task Queue:</h2></div>
+            <div class="panel-body">
+                <form action="/deleteTaskHandler" method="post">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>UserName</th>
+                                <th>Content</th>
+                                <th>Current Temperature</th>
+                                <th>Future Temperature</th>
+                                <th>Delete User</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for usrEntry in taskList %}
+                            <tr>
+                                <td>{{usrEntry.usrName}}</td>
+                                <td>{{usrEntry.currContent}}</td>
+                                <td>{{usrEntry.currTemp}}</td>
+                                <td>{{usrEntry.tmrTemp}}</td>
+                                <td><input type="checkbox" name="deleteCheckbox" value="{{usrEntry.usrName}}"></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <div>
+                        <button type="submit" class="btn btn-default pull-right">Delete User</button>
+                    </div>
+                </form>
+            </div>
+		</div>
+
+	</body>
+</html>
+{% endautoescape %}

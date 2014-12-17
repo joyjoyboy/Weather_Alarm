@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+<head>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+
+</head> 
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+			<a class="navbar-brand" href="#">Console</a>
+			<ul class="nav navbar-nav">
+				<li>
+					<a href="/">Manage</a>
+				</li>
+				<li>
+					<a href="/createUser">Create User</a>
+				</li>
+				<li>
+					<a href="/createCalendar">Create Calendar Event</a>
+				</li>
+				<li class="active">
+					<a href="/setThreshold">Set Threshold</a>
+				</li>
+			</ul>
+		</nav>
+		<br><br>
+		<div class="panel panel-default">
+			<div class="panel-heading"><h2>Current Threshold: {{threshold}}</h2></div>
+
+			<form role="form" action="/setThresholdHandler" method="post">
+				<div class="form-group">
+					<label for="setThreshold">Set Threshold:</label>
+					<input type="text" class="form-control" placeholder="Enter threshold value:" name="newThreshold" style="width:40%">
+				</div>
+				<button type="submit" class="btn btn-default pull-left">Submit</button>
+			</form>
+
+		</div>
+
+	</body>
+</html>
+{% endautoescape %}
