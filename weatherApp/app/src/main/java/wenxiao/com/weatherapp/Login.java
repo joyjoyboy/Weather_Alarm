@@ -158,7 +158,6 @@ public class Login extends Activity {
 
                         @Override
                         public void onFailure(int statusCode, Header[] headers, byte[] errorResponse, Throwable e) {
-                            Log.e("Sign up verification ", "Failed!");
                             Toast.makeText(Login.this, "Connection failed", Toast.LENGTH_SHORT).show();
                         }
                     });
